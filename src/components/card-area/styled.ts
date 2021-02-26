@@ -6,8 +6,10 @@ const Container = styled.div`
     border-radius: 15px;
     height: 75vh;
     margin: 50px auto;
+    position: relative;
     width: 555px;
 `
+
 
 const PlayerName = styled.h4`
     font-size: 1.2em;
@@ -16,7 +18,13 @@ const PlayerName = styled.h4`
     text-transform: uppercase;
 `
 
+const SliderTeamsContainer = styled.div`
+    margin-top: 585px;
+
+`
+
 export const CardAreaStyled = {
     Container,
-    PlayerName
+    PlayerName,
+    SliderTeamsContainer
 }
