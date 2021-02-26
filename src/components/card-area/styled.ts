@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 
+
+
 const Container = styled.div`
     border: 1px solid gray;
     border-radius: 15px;
@@ -19,12 +21,35 @@ const PlayerName = styled.h4`
 `
 
 const SliderTeamsContainer = styled.div`
-    margin-top: 585px;
+    margin-top: 490px;
+`
 
+const CardTeam = styled.div`
+    display: flex;
+    height: 150px;
+    padding: 25px;
+`
+
+const TeamData = styled.div`
+    width: 75%;
+`
+const TeamLogo = styled.img`
+    height: 75px;
+    width: 90px;
+`
+
+const TeamName = styled.p`
+    font-family: 'DotGothic16', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
 `
 
 export const CardAreaStyled = {
+    CardTeam,
     Container,
     PlayerName,
-    SliderTeamsContainer
+    SliderTeamsContainer,
+    TeamData,
+    TeamLogo,
+    TeamName
 }

@@ -5,30 +5,26 @@ export const Mock: PlayersAndTeams[] = [
         player_name: 'Octávio Augusto',
         teams: [
             {
-                team_name: 'Corinthians'
-            },
-            {
+                image_name: 'CelticLogo',
                 team_name: 'Celtic'
             },
             {
-                team_name: 'Borussia Dortmund'
+                image_name: 'CorinthiansLogo',
+                team_name: 'Corinthians'
             }
-
         ]
     },
     {
         player_name: 'Augusto Octávio',
         teams: [
             {
+                image_name: 'BorussiaLogo',
+                team_name: 'Borussia'
+            },
+            {
+                image_name: 'SantosLogo',
                 team_name: 'Santos'
-            },
-            {
-                team_name: 'Rangers'
-            },
-            {
-                team_name: 'Bayern de Munique'
             }
-
         ]
     }
 ]

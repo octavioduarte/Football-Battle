@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { FC, Fragment } from 'react'
 import Slider from "react-slick";
+import { LogoTeams } from '../../images'
 import { CardAreaStyled } from './styled'
 import { PlayersAndTeams } from '../../types/teams-and-players'
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -14,7 +14,7 @@ type CardAreaProps = {
 
 const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -24,17 +24,26 @@ const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => {
     return (
         <CardAreaStyled.Container>
 
-                <CardAreaStyled.PlayerName>
-                    {teamsAndPlayer.player_name}
-                </CardAreaStyled.PlayerName>
+            <CardAreaStyled.PlayerName>
+                {teamsAndPlayer.player_name}
+            </CardAreaStyled.PlayerName>
 
 
             <CardAreaStyled.SliderTeamsContainer>
                 <Slider  {...settings}>
                     {teamsAndPlayer.teams.map((team, key) => (
-                        <div key={`${key}-${team.team_name}`}>
-                            <h1>{team.team_name}</h1>
-                        </div>
+                        <Fragment key={`${key}-${team.team_name}`}>
+                            <CardAreaStyled.CardTeam>
+                                <CardAreaStyled.TeamLogo
+                                    alt={`${team.image_name} logo`}
+                                    key={`${team.image_name}`}
+                                    src={LogoTeams[team.image_name]}
+                                />
+                                <CardAreaStyled.TeamData>
+                                    <CardAreaStyled.TeamName>{team.team_name}</CardAreaStyled.TeamName>
+                                </CardAreaStyled.TeamData>
+                            </CardAreaStyled.CardTeam>
+                        </Fragment>
                     ))}
                 </Slider>
             </CardAreaStyled.SliderTeamsContainer>
