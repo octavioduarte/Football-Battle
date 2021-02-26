@@ -2,7 +2,7 @@ import { PlayersAndTeams } from "./types/teams-and-players";
 
 export const Mock: PlayersAndTeams[] = [
     {
-        player_name: 'Octávio',
+        player_name: 'Octávio Augusto',
         teams: [
             {
                 team_name: 'Corinthians'
@@ -17,7 +17,7 @@ export const Mock: PlayersAndTeams[] = [
         ]
     },
     {
-        player_name: 'Augusto',
+        player_name: 'Augusto Octávio',
         teams: [
             {
                 team_name: 'Santos'

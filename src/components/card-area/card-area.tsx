@@ -8,7 +8,11 @@ type CardAreaProps = {
 }
 
 const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => (
-    <CardAreaStyled.Container>{teamsAndPlayer.player_name}</CardAreaStyled.Container>
+    <CardAreaStyled.Container>
+        <CardAreaStyled.PlayerName>
+            {teamsAndPlayer.player_name}
+        </CardAreaStyled.PlayerName>
+    </CardAreaStyled.Container>
 )
 
 export default CardArea
