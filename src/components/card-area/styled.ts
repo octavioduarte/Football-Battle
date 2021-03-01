@@ -21,20 +21,21 @@ const PlayerName = styled.h4`
 `
 
 const SliderTeamsContainer = styled.div`
-    margin-top: 490px;
+    margin-top: 400px;
 `
 
 const CardTeam = styled.div`
     display: flex;
-    height: 150px;
+    height: 200px;
     padding: 25px;
 `
 
 const TeamData = styled.div`
-    width: 75%;
+    width: 100%;
 `
 const TeamLogo = styled.img`
     height: 75px;
+    margin: auto;
     width: 90px;
 `
 
@@ -44,11 +45,27 @@ const TeamName = styled.p`
     text-transform: uppercase;
 `
 
+const TeamBattlePropsContainer = styled.ul`
+    text-align: left;
+    padding-left: 15px;
+    width: 495px;
+`
+
+const TeamBattlePropsRow = styled.li`
+    display: flex;
+    font-family: 'DotGothic16', sans-serif;
+    justify-content: space-between;
+    margin-top: 6px;
+    text-transform: uppercase;
+`
+
 export const CardAreaStyled = {
     CardTeam,
     Container,
     PlayerName,
     SliderTeamsContainer,
+    TeamBattlePropsContainer,
+    TeamBattlePropsRow,
     TeamData,
     TeamLogo,
     TeamName
