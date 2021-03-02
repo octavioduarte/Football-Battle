@@ -2,23 +2,26 @@ import { FC, Fragment } from 'react'
 import Slider from "react-slick";
 import { LogoTeams } from '../../images'
 import { CardAreaStyled } from './styled'
-import { PlayersAndTeams, TeamsBattleProps } from '../../types/teams-and-players'
+import { PlayersAndTeams, TeamsBattleProps, TeamsData } from '../../types/teams-and-players'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
 
 type CardAreaProps = {
+    selectTeamToBattle: (itemTitle: string, itemValue: number, team: TeamsData) => void
     teamsAndPlayer: PlayersAndTeams
 }
 
 type TeamBattleRowProps = {
     itemTitle: string
     itemValue: number
+    selectTeamToBattle: (itemTitle: string, itemValue: number, team: TeamsData) => void,
+    team: TeamsData
 }
 
-const TeamBattleRow: FC<TeamBattleRowProps> = ({ itemTitle, itemValue }) => (
-    <CardAreaStyled.TeamBattlePropsRow>
+const TeamBattleRow: FC<TeamBattleRowProps> = ({ itemTitle, itemValue, team, selectTeamToBattle }) => (
+    <CardAreaStyled.TeamBattlePropsRow onClick={() => selectTeamToBattle(itemTitle, itemValue, team)}>
         <p>{itemTitle}</p>
         <p>{itemValue}</p>
     </CardAreaStyled.TeamBattlePropsRow>
@@ -32,7 +35,7 @@ const settings = {
     slidesToScroll: 1
 };
 
-const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => (
+const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer, selectTeamToBattle }) => (
     <CardAreaStyled.Container>
         <CardAreaStyled.SliderTeamsContainer>
             <Slider  {...settings}>
@@ -51,7 +54,10 @@ const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => (
                                         <TeamBattleRow
                                             key={itemTitle.concat(team.team_name)}
                                             itemTitle={itemTitle}
-                                            itemValue={team.teams_battle_props[itemTitle as keyof TeamsBattleProps]} />
+                                            itemValue={team.teams_battle_props[itemTitle as keyof TeamsBattleProps]}
+                                            team={team}
+                                            selectTeamToBattle={selectTeamToBattle}
+                                        />
                                     ))}
                                 </CardAreaStyled.TeamBattlePropsContainer>
                             </CardAreaStyled.TeamData>
