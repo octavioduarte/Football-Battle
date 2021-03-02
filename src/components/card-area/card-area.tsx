@@ -34,9 +34,6 @@ const settings = {
 
 const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => (
     <CardAreaStyled.Container>
-        <CardAreaStyled.PlayerName>
-            {teamsAndPlayer.player_name}
-        </CardAreaStyled.PlayerName>
         <CardAreaStyled.SliderTeamsContainer>
             <Slider  {...settings}>
                 {teamsAndPlayer.teams.map((team, key) => (

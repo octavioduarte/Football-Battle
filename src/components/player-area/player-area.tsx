@@ -12,9 +12,10 @@ const PlayerArea: FC<PlayerAreaProps> = ({ teamsAndPlayers }) => {
     return (
         <PlayerStyled.Container>
             {teamsAndPlayers.map((item, key) => (
-                <Fragment key={key}>
+                <PlayerStyled.PlayerCard key={key}>
+                    <PlayerStyled.PlayerName>{item.player_name}</PlayerStyled.PlayerName>
                     <CardArea teamsAndPlayer={item} />
-                </Fragment>
+                </PlayerStyled.PlayerCard>
             ))}
         </PlayerStyled.Container>
 

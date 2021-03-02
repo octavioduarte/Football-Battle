@@ -4,10 +4,8 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    border: 1px solid gray;
-    border-radius: 15px;
-    height: 75vh;
-    margin: 50px auto;
+    height: 30vh;
+    margin: 50px auto 0;
     position: relative;
     width: 555px;
 `
