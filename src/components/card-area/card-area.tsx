@@ -51,7 +51,10 @@ const CardArea: FC<CardAreaProps> = ({ teamsAndPlayer }) => (
                                 <CardAreaStyled.TeamName>{team.team_name}</CardAreaStyled.TeamName>
                                 <CardAreaStyled.TeamBattlePropsContainer>
                                     {Object.keys(team.teams_battle_props).map((itemTitle) => (
-                                        <TeamBattleRow itemTitle={itemTitle} itemValue={team.teams_battle_props[itemTitle as keyof TeamsBattleProps]} />
+                                        <TeamBattleRow
+                                            key={itemTitle.concat(team.team_name)}
+                                            itemTitle={itemTitle}
+                                            itemValue={team.teams_battle_props[itemTitle as keyof TeamsBattleProps]} />
                                     ))}
                                 </CardAreaStyled.TeamBattlePropsContainer>
                             </CardAreaStyled.TeamData>

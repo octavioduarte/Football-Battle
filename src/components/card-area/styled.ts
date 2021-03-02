@@ -46,6 +46,7 @@ const TeamName = styled.p`
 `
 
 const TeamBattlePropsContainer = styled.ul`
+    cursor: pointer;
     text-align: left;
     padding-left: 15px;
     width: 495px;
@@ -57,6 +58,10 @@ const TeamBattlePropsRow = styled.li`
     justify-content: space-between;
     margin-top: 6px;
     text-transform: uppercase;
+
+    &:hover {
+        background: #d6d3d3;
+    }
 `
 
 export const CardAreaStyled = {
